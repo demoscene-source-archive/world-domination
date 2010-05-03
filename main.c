@@ -346,6 +346,7 @@ particle particles2[PARTICLES2];
 particle particles3[PARTICLES3];
 
 int main(){
+	BOOL done = FALSE;
 	MSG msg;
 	IDirect3DDevice9 *device = NULL;
 	IDirect3DSurface9 *main_rendertarget = NULL;
@@ -992,10 +993,11 @@ int main(){
 		while (PeekMessage(&msg,NULL,0,0,PM_REMOVE)){ 
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
-			if (msg.message == WM_QUIT)
-				break;
+			if (msg.message == WM_QUIT ||
+			    msg.message == WM_KEYDOWN && LOWORD(msg.wParam) == VK_ESCAPE)
+				done = TRUE;
 		}
-	}while(msg.message!=WM_QUIT && !GetAsyncKeyState(VK_ESCAPE));
+	}while(!done);
 
 	deinit_marching_cubes();
 	deinit_overlays();
