@@ -177,7 +177,7 @@ scene *load_scene(IDirect3DDevice9 *device, char *filename){
 			}
 
 			if(!target_entry){
-				printf("no target! (%i)\n (only %i targets)",owner_id,temp->entry_count);
+				fprintf(stderr, "no target! (%i)\n (only %i targets)",owner_id,temp->entry_count);
 				return FALSE;
 			}
 
