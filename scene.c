@@ -144,8 +144,6 @@ scene *load_scene(IDirect3DDevice9 *device, char *filename){
 
 	}
 
-	printf("kom seg hit i hvertfall\n");
-
 	/* animdata */
 	file_read(&temp->start,sizeof(float),1,fp);
 	file_read(&temp->end,sizeof(float),1,fp);
