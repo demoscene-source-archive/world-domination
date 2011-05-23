@@ -41,12 +41,12 @@ video *video_load(IDirect3DDevice9 *device, char *filename){
 
 	if(decore(temp->handle, DEC_OPT_MEMORY_REQS, &dec_param, &dec_mem_reqs)!=DEC_OK) return NULL;
 
-	dec_param.buffers.mp4_edged_ref_buffers =	malloc(dec_mem_reqs.mp4_edged_ref_buffers_size);
-	dec_param.buffers.mp4_edged_for_buffers =	malloc(dec_mem_reqs.mp4_edged_for_buffers_size);
-	dec_param.buffers.mp4_display_buffers =		malloc(dec_mem_reqs.mp4_display_buffers_size);
-	dec_param.buffers.mp4_state =				malloc(dec_mem_reqs.mp4_state_size);
-	dec_param.buffers.mp4_tables =				malloc(dec_mem_reqs.mp4_tables_size);
-	dec_param.buffers.mp4_stream =				malloc(dec_mem_reqs.mp4_stream_size);
+	dec_param.buffers.mp4_edged_ref_buffers = malloc(dec_mem_reqs.mp4_edged_ref_buffers_size);
+	dec_param.buffers.mp4_edged_for_buffers = malloc(dec_mem_reqs.mp4_edged_for_buffers_size);
+	dec_param.buffers.mp4_display_buffers =   malloc(dec_mem_reqs.mp4_display_buffers_size);
+	dec_param.buffers.mp4_state =             malloc(dec_mem_reqs.mp4_state_size);
+	dec_param.buffers.mp4_tables =            malloc(dec_mem_reqs.mp4_tables_size);
+	dec_param.buffers.mp4_stream =            malloc(dec_mem_reqs.mp4_stream_size);
 
 	memset(dec_param.buffers.mp4_state, 0, dec_mem_reqs.mp4_state_size);
 	memset(dec_param.buffers.mp4_tables, 0, dec_mem_reqs.mp4_tables_size);
