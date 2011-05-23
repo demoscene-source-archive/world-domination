@@ -107,7 +107,7 @@ BOOL video_get_frame(video *vid, unsigned int *pixeldata, float time){
 //		printf("decoding... target frame: %i frame: %i (total: %i) time: %f\r", frame, vid->current_frame, vid->frames, time);
 #endif
 		if( decore(vid->handle, 0, &dec_frame, NULL) != DEC_OK ){
-			printf("jalla-error\n");
+			fprintf(stderr, "decore failed!\n");
 			return FALSE;
 		}
 	}
@@ -143,7 +143,7 @@ void video_update(video *vid, float time){
 			IDirect3DBaseTexture9_GenerateMipSubLevels(vid->texture);
 
 		}else{
-			printf("dilldall\n");
+			fprintf(stderr, "IDirect3DTexture9_LockRect failed!\n");
 		}
 	}
 }
